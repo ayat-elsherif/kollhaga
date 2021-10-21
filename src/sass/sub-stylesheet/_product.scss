@@ -1,0 +1,100 @@
+/*--------------------------------
+Products
+--------------------------------*/
+
+.products {
+    margin-bottom: -55px;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+
+.product {
+    width: 100%;
+    margin-bottom: 55px;
+}
+
+.product-thumb {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background: #f3f3f3;
+    box-shadow: inset 0px 0px 19px 7px #cccccc55;
+    padding: 15px;
+    img {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        @include transition(all 0.3s ease);
+    }
+    .product-thumb-hover {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 30px 5px;
+        text-align: center;
+        background-color: rgba(#111111, 0.55);
+        opacity: 0;
+        @include transition(all 0.3s ease);
+        overflow: hidden;
+        .btn {
+            color: #111111;
+            text-transform: none;
+            transform: translateY(100px);
+            &:focus,
+            &:active,
+            &:active:focus,
+            &:visited {
+                color: #111111;
+            }
+            &:hover,
+            &:active:hover,
+            &:focus:hover {
+                color: #ffffff;
+                background-color: $primaryColor;
+                border-color: $primaryColor;
+            }
+            i{
+                font-size: 1.8rem;
+            }
+        }
+    }
+    &:hover {
+        .product-thumb-hover {
+            opacity: 1;
+            .btn {
+                transform: translateY(0);
+            }
+        }
+        img{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.product-detail {
+    margin-top: 20px;
+    .product-name {
+        font-weight: 600;
+        color: $baseColor;
+        font-size: 1.8rem;
+        margin: 0;
+        a {
+            color: inherit;
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+        small{
+            font-size: .8em;
+            letter-spacing: 3px;
+        }
+    }
+    .product-price {
+        font-size: 2.25rem;
+        color: #fc427f;
+        font-weight: 600;
+        margin: 0;
+    }
+}

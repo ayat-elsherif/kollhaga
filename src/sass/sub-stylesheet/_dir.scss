@@ -1,0 +1,14 @@
+$direction: ltr !default;
+
+/**
+ * Flips any values
+ */
+@function flip($latin, $arabic) {
+  @return if($direction == ltr, #{$latin}, #{$arabic});
+}
+
+/**
+ * Flips left for right, right for left
+ */
+$left: flip(left, right);
+$right: flip(right, left);
