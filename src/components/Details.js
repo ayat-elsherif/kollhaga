@@ -12,10 +12,10 @@ class Details extends Component {
         {/* <!-- About Album --> */}
         <ProductConsumer>
           {(value) => {
-            const varDetail = value.products.find(
-              (product) => product.id == this.props.match.params.id
-            );
-            value.details = { ...varDetail };
+            // const varDetail = value.products.find((product) => {
+            //   return product.id === this.props.match.params.id;
+            // });
+            // value.details = { ...varDetail };
             console.log(value.details, "details page");
             const { id, title, img, info, company, price, inCart } =
               value.details;
