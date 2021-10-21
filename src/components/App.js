@@ -10,7 +10,7 @@ import Details from "./Details";
 import Header from "./Header";
 import DefaultPage from "./DefaultPage";
 // import DefaultPage from "./DefaultPage";
-import { Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import HomeSlider from "./HomeSlider";
 import ProductList from "./ProductList";
 import Modal from "./Modal";
@@ -20,16 +20,16 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <div>
-          {/* <Switch> */}
-          <Route exact path="/">
-            <HomeSlider />
-            <ProductList />
-          </Route>
-          <Route path="/products" component={ProductList} />
-          <Route path="/store" component={Cart} />
-          <Route path="/details/:id" component={Details} />
-          {/* <Route component={DefaultPage} />
-          </Switch> */}
+          <Switch>
+            <Route exact path="/">
+              <HomeSlider />
+              <ProductList />
+            </Route>
+            <Route path="/products" component={ProductList} />
+            <Route path="/store" component={Cart} />
+            <Route path="/details/:id" component={Details} />
+            <Route component={DefaultPage} />
+          </Switch>
         </div>
         <Modal />
       </React.Fragment>
