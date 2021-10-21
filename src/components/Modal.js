@@ -35,7 +35,7 @@ class ProductModal extends Component {
                       className="btn btn-black"
                       onClick={value.closeModal}
                     >
-                      <Link to={"/store/"}>Go to Cart</Link>
+                      <Link to={"/store"}>Go to Cart</Link>
                     </Button>
                   </Card.Body>
                 </Card>

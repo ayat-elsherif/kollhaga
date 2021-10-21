@@ -14,6 +14,7 @@ import { Switch, Route } from "react-router-dom";
 import HomeSlider from "./HomeSlider";
 import ProductList from "./ProductList";
 import Modal from "./Modal";
+import PageBanner from "./PageBanner";
 class App extends React.Component {
   render() {
     return (
@@ -25,8 +26,14 @@ class App extends React.Component {
               <HomeSlider />
               <ProductList />
             </Route>
-            <Route path="/products" component={ProductList} />
-            <Route path="/store" component={Cart} />
+            <Route path="/products" exact>
+              <PageBanner
+                bannerPage="Products"
+                bannerTitle="the available mobiles"
+              />
+              <ProductList />
+            </Route>
+            <Route path="/store" exact component={Cart} />
             <Route path="/details/:id" component={Details} />
             <Route component={DefaultPage} />
           </Switch>

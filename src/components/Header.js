@@ -30,21 +30,8 @@ class Header extends Component {
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav className="navbar-right ms-auto">
-                  {/* <li className="active">
-                    <a href="index.html">Home</a>
-                  </li> */}
-
-                  <NavDropdown title="About">
-                    <NavDropdown.Item href="about-band.html">
-                      About Band
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item href="about-singer.html">
-                      About Singer
-                    </NavDropdown.Item>
-                  </NavDropdown>
                   <li>
-                    <a href="album.html">Album</a>
+                    <Link to="products">Products</Link>
                   </li>
                   {/* <NavDropdown title="Concert">
                     <NavDropdown.Item href="upcoming-concert.html">
@@ -63,40 +50,10 @@ class Header extends Component {
                       4 Column
                     </NavDropdown.Item>
                   </NavDropdown> */}
-                  <NavDropdown title="Shop">
-                    <NavDropdown.Item href="shop-3-col.html">
-                      Shop 3 Column
-                    </NavDropdown.Item>
 
-                    <NavDropdown.Item href="shop-4-col.html">
-                      Shop 4 Column
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Blog">
-                    <NavDropdown.Item href="blog-mesonry.html">
-                      Blog Mesonry
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item href="blog-list.html">
-                      Blog List
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item href="blog-single.html">
-                      Blog Single
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Pages">
-                    <NavDropdown.Item href="contact.html">
-                      Contact
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item href="faq.html">
-                      FAQ Page
-                    </NavDropdown.Item>
-                  </NavDropdown>
                   <NavDropdown title={<i className="fas fa-cart-plus"></i>}>
-                    <NavDropdown.Item href="contact.html">
-                      Contact
+                    <NavDropdown.Item>
+                      <Link to="/store">Open Cart</Link>
                     </NavDropdown.Item>
 
                     <NavDropdown.Item href="faq.html">
