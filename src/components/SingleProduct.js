@@ -46,9 +46,7 @@ class SingleProduct extends React.Component {
                   </h4>
                   <p className="product-price">
                     {price}
-                    <small className="text-muted">
-                      <sub>EGP</sub>
-                    </small>
+                    <small className="text-muted">EGP</small>
                   </p>
                 </div>
               </div>
