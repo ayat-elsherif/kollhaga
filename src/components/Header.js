@@ -65,7 +65,6 @@ class Header extends Component {
                   <a
                     id="search-toggle"
                     className="search-toggle"
-                    href="#"
                     onClick={this.searchHelper}
                   >
                     <i className={"fa " + this.state.icon}></i>

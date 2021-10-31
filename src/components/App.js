@@ -34,7 +34,7 @@ class App extends React.Component {
               <ProductList />
             </Route>
             <Route path="/store" exact component={Cart} />
-            <Route path="/details/:id" component={Details} />
+            <Route path="/details/:id" exact component={Details} />
             <Route component={DefaultPage} />
           </Switch>
         </div>

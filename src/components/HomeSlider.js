@@ -20,12 +20,18 @@ class HomeSlider extends React.Component {
         <Slider {...this.settings} className="banner-slider">
           {/* <!-- Banner Slider --> */}
           <div className="banner-item banner-item-1">
+            <img className="img-container" src="img/background/1.jpg" />
             <div className="banner-content">
               <div className="container">
-                <h3 className="banner-subtitle theme-color">New Music Album</h3>
-                <h1 className="banner-title">Get the new songs</h1>
+                <h3 className="banner-subtitle theme-color">
+                  The Latest Mobiles In Market
+                </h3>
+                <h1 className="banner-title">with Comparative Prices</h1>
                 <div className="button-group">
-                  <a className="btn btn-border btn-lg btn-black" href="#">
+                  <a
+                    className="btn btn-border btn-lg btn-black"
+                    href="#Products"
+                  >
                     Purchase Now
                   </a>
                   <a
@@ -40,12 +46,17 @@ class HomeSlider extends React.Component {
           </div>
 
           <div className="banner-item banner-item-2">
+            <img className="img-container" src="img/background/2.jpg" />
+
             <div className="banner-content text-white">
               <div className="container">
-                <h3 className="banner-subtitle">New Music Album</h3>
-                <h1 className="banner-title">Get the new songs</h1>
+                <h3 className="banner-subtitle">All the Features You Have</h3>
+                <h1 className="banner-title">Ever dreamed of</h1>
                 <div className="button-group">
-                  <a className="btn btn-border btn-lg btn-white" href="#">
+                  <a
+                    className="btn btn-border btn-lg btn-white"
+                    href="#Products"
+                  >
                     Purchase Now
                   </a>
                   <a
@@ -60,12 +71,17 @@ class HomeSlider extends React.Component {
           </div>
 
           <div className=" banner-item banner-item-3">
+            <img className="img-container" src="img/background/3.jpg" />
+
             <div className="banner-content">
               <div className="container text-center">
-                <h3 className="banner-subtitle">New Music Album</h3>
-                <h1 className="banner-title">Get the new songs</h1>
+                <h3 className="banner-subtitle">get tuned</h3>
+                <h1 className="banner-title">with friends anytime</h1>
                 <div className="button-group">
-                  <a className="btn btn-border btn-lg btn-black" href="#">
+                  <a
+                    className="btn btn-border btn-lg btn-black"
+                    href="#Products"
+                  >
                     Purchase Now
                   </a>
                   <a

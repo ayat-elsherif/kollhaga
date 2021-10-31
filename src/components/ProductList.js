@@ -5,7 +5,7 @@ class Productlist extends Component {
   state = {};
   render() {
     return (
-      <div className="section section-padding">
+      <div className="section section-padding" id="Products">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 col-12">
@@ -20,8 +20,8 @@ class Productlist extends Component {
           </div>
           <div className="row products">
             <ProductConsumer>
-              {(value) => {
-                return value.products.map((product) => {
+              {value => {
+                return value.products.map(product => {
                   return <SingleProduct product={product} key={product.id} />;
                 });
               }}

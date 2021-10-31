@@ -8,13 +8,13 @@ class SingleProduct extends React.Component {
     return (
       // <!-- Music Shop -->
       <ProductConsumer>
-        {(value) => {
+        {value => {
           return (
             <div className="col-lg-3 col-sm-4 col-12">
               <div className="product">
                 <div className="product-thumb">
                   <Link
-                    to={"/details/" + id}
+                    to={"details/" + id}
                     onClick={() => value.handleDetails(id)}
                   >
                     <img className="img-responsive" src={img} alt={title} />
@@ -44,7 +44,12 @@ class SingleProduct extends React.Component {
                       <small className="text-muted"> {company}</small>
                     </div>
                   </h4>
-                  <p className="product-price">${price}</p>
+                  <p className="product-price">
+                    {price}
+                    <sup className="text-muted">
+                      <small>EGP</small>
+                    </sup>
+                  </p>
                 </div>
               </div>
             </div>

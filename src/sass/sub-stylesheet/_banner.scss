@@ -4,20 +4,21 @@ Banner
 
 .banner-item {
     height: 768px;
-    background-size: cover;
-    background-position: center center;
+    // background-size: cover;
+    // background-position: center center;
     position: relative;
+    max-width: 100%;
 }
 
 .banner-item-1 {
-    // background-image: url(assets/images/banner/1.jpg);
     background-color: #eb9596;
-
+    // background: url("../../images/banner/1.jpg");
 }
 
 .banner-item-2 {
-    // background-image: url(assets/images/banner/2.jpg);
     background-color: #ff96b5;
+    // background: url("../../images/banner/2.jpg");
+
   
 }
 
@@ -26,6 +27,9 @@ Banner
     background-color: #ff4582;
 }
 
+.img-container{
+    width:100%
+}
 .banner-content {
     position: absolute;
     top: 50%;
