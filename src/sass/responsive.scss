@@ -312,7 +312,6 @@
             width: 50%;
             text-align: center;
             max-width: none;
-            float: left;
             .artist-avatar {
                 max-width: 278px;
                 float: none;
@@ -651,6 +650,9 @@
                 + td {
                     margin-top: 10px;
                 }
+            }
+            &:hover{
+                background-color: #333333;
             }
         }
         .show-ticket {

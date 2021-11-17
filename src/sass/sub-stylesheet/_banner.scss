@@ -8,28 +8,37 @@ Banner
     // background-position: center center;
     position: relative;
     max-width: 100%;
+    .img-container{
+        width:100%;
+        height: 750px;
+    }
 }
 
 .banner-item-1 {
-    background-color: #eb9596;
+    @media screen and (max-width:576px) {
+        background-color:  #eb9596;
+    }
     // background: url("../../images/banner/1.jpg");
+   
 }
 
 .banner-item-2 {
-    background-color: #ff96b5;
     // background: url("../../images/banner/2.jpg");
+    @media screen and (max-width:576px) {
+        background-color:  #ff96b5;
+    }
 
   
 }
 
 .banner-item-3 {
     // background-image: url(assets/images/banner/3.jpg);
-    background-color: #ff4582;
+    @media screen and (max-width:576px) {
+        background-color:  #ff4582;
+    }
 }
 
-.img-container{
-    width:100%
-}
+
 .banner-content {
     position: absolute;
     top: 50%;

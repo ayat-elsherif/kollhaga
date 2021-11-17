@@ -20,12 +20,13 @@ class HomeSlider extends React.Component {
         <Slider {...this.settings} className="banner-slider">
           {/* <!-- Banner Slider --> */}
           <div className="banner-item banner-item-1">
-            <img className="img-container" src="img/background/1.jpg" />
+            <img
+              className="img-container d-none d-sm-block"
+              src="img/background/1.jpg"
+            />
             <div className="banner-content">
-              <div className="container">
-                <h3 className="banner-subtitle theme-color">
-                  The Latest Mobiles In Market
-                </h3>
+              <div className="container px-md-0 px-5">
+                <h3 className="banner-subtitle theme-color">Latest Handsets</h3>
                 <h1 className="banner-title">with Comparative Prices</h1>
                 <div className="button-group">
                   <a
@@ -46,10 +47,13 @@ class HomeSlider extends React.Component {
           </div>
 
           <div className="banner-item banner-item-2">
-            <img className="img-container" src="img/background/2.jpg" />
+            <img
+              className="img-container  d-none d-sm-block"
+              src="img/background/2.jpg"
+            />
 
             <div className="banner-content text-white">
-              <div className="container">
+              <div className="container px-md-0 px-5">
                 <h3 className="banner-subtitle">All the Features You Have</h3>
                 <h1 className="banner-title">Ever dreamed of</h1>
                 <div className="button-group">
@@ -71,7 +75,10 @@ class HomeSlider extends React.Component {
           </div>
 
           <div className=" banner-item banner-item-3">
-            <img className="img-container" src="img/background/3.jpg" />
+            <img
+              className="img-container d-none d-sm-block"
+              src="img/background/3.jpg"
+            />
 
             <div className="banner-content">
               <div className="container text-center">

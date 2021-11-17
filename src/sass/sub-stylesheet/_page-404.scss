@@ -3,10 +3,21 @@
 --------------------------------*/
 
 .section-404 {
+    background: #ffd3e5;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 4rem;
+    letter-spacing: 4px;
     .img-404 {
         display: inline-block;
         float: none;
         margin: 0 auto;
+        text-align: center;
+        img{
+            width: 80%;
+            margin:auto;
+        }
     }
     .title-404 {
         font-weight: 500;
@@ -21,11 +32,12 @@
         margin: 0 auto;
         float: none;
         [type=search] {
-            border: 1px solid #e7e7e7;
+            border: 1px solid #fff;
             background-color: transparent;
             font-weight: 500;
             font-size: 1.4rem;
             padding: 17px 30px;
+            border-radius: 10px;
         }
         [type=submit] {
             color: $primaryColor;
@@ -36,6 +48,12 @@
             right: 0;
             font-size: 1.8rem;
             padding: 13px 30px;
+        }
+    }
+
+    .not-found{
+        img{
+            width: 80%;
         }
     }
 }

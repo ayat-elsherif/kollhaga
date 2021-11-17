@@ -11,7 +11,7 @@ class Details extends Component {
       <div className="main-wrap">
         {/* <!-- About Album --> */}
         <ProductConsumer>
-          {(value) => {
+          {value => {
             // const varDetail = value.products.find((product) => {
             //   return product.id === this.props.match.params.id;
             // });
@@ -40,7 +40,7 @@ class Details extends Component {
                           <small>{company}</small>
                           <p>{info}</p>
 
-                          <div className="d-flex justify-content-between align-items-end pt-5">
+                          <div className="d-flex justify-content-between align-items-end pt-5 flex-wrap">
                             <div className="text-center">
                               <p className="price">price: ${price}</p>
                               <button
@@ -58,8 +58,12 @@ class Details extends Component {
                                 )}
                               </button>
                             </div>
-                            <Link to="/" className="text-decoration-underline">
-                              Back to Products
+                            <Link
+                              to="/"
+                              className="text-decoration-underline mt-5"
+                              onClick={this.props.history.goBack}
+                            >
+                              Back
                             </Link>
                           </div>
                         </div>

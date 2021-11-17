@@ -9,7 +9,7 @@ import Cart from "./cart/Cart";
 import Details from "./Details";
 import Header from "./Header";
 import DefaultPage from "./DefaultPage";
-// import DefaultPage from "./DefaultPage";
+import SearchList from "./SearchList";
 import { Switch, Route } from "react-router-dom";
 import HomeSlider from "./HomeSlider";
 import ProductList from "./ProductList";
@@ -32,6 +32,13 @@ class App extends React.Component {
                 bannerTitle="the available mobiles"
               />
               <ProductList />
+            </Route>
+            <Route path="/results" exact>
+              <PageBanner
+                bannerPage="Search"
+                bannerTitle="Your Seach Results"
+              />
+              <SearchList />
             </Route>
             <Route path="/store" exact component={Cart} />
             <Route path="/details/:id" exact component={Details} />

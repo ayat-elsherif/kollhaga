@@ -1,5 +1,6 @@
 import React from "react";
 import { storeProducts, detailProduct } from "../data";
+import { Redirect } from "react-router-dom";
 
 const ProductContext = React.createContext();
 
@@ -10,6 +11,7 @@ class ProductProvider extends React.Component {
     cart: [],
     modalProduct: detailProduct,
     modalOpen: false,
+    searchList: [],
     increment: 0,
     decrement: 0,
     subTotal: 0,
@@ -22,16 +24,16 @@ class ProductProvider extends React.Component {
     });
   }
 
-  getSingleItem = (id) => {
-    return this.state.products.find((Product) => Product.id === id);
+  getSingleItem = id => {
+    return this.state.products.find(Product => Product.id === id);
   };
-  handleDetails = (id) => {
+  handleDetails = id => {
     const product = this.getSingleItem(id);
     this.setState(() => {
       return { details: product };
     });
   };
-  addToCart = (id) => {
+  addToCart = id => {
     const tempProd = [...this.state.products];
     const index = tempProd.indexOf(this.getSingleItem(id));
     const product = tempProd[index];
@@ -48,14 +50,14 @@ class ProductProvider extends React.Component {
 
   getItemsFromProducts = () => {
     let products = [];
-    storeProducts.forEach((item) => {
+    storeProducts.forEach(item => {
       const product = { ...item };
       products = [...products, product];
     });
     // console.log(products, "getItemsFromProducts");
     return products;
   };
-  openModal = (id) => {
+  openModal = id => {
     const product = this.getSingleItem(id);
     // console.log(product, "open Modal");
     this.setState(() => {
@@ -68,12 +70,12 @@ class ProductProvider extends React.Component {
     });
   };
 
-  clickOnCart = (id) => {
+  clickOnCart = id => {
     this.addToCart(id);
     this.handleDetails(id);
     this.openModal(id);
   };
-  toIncrement = (id) => {
+  toIncrement = id => {
     const newCart = [...this.state.cart];
     const index = newCart.indexOf(this.getSingleItem(id));
     const product = newCart[index];
@@ -86,7 +88,7 @@ class ProductProvider extends React.Component {
       () => this.calcTotal()
     );
   };
-  toDecrement = (id) => {
+  toDecrement = id => {
     const tempCart = [...this.state.cart];
     const index = tempCart.indexOf(this.getSingleItem(id));
     const product = tempCart[index];
@@ -105,7 +107,7 @@ class ProductProvider extends React.Component {
       () => this.calcTotal()
     );
   };
-  removeItem = (id) => {
+  removeItem = id => {
     const products = [...this.state.products];
     let index = products.indexOf(this.getSingleItem(id));
     const product = products[index];
@@ -113,7 +115,7 @@ class ProductProvider extends React.Component {
     product.count = 0;
     product.total = 0;
     console.log(this.state.cart, product.id);
-    const restCart = this.state.cart.filter((item) => item.id != product.id);
+    const restCart = this.state.cart.filter(item => item.id != product.id);
     this.setState(
       () => {
         return {
@@ -143,13 +145,34 @@ class ProductProvider extends React.Component {
   };
   calcTotal = () => {
     let subTotal = 0;
-    this.state.cart.map((item) => (subTotal += item.total));
+    this.state.cart.map(item => (subTotal += item.total));
     const tempTax = subTotal * 0.1;
     const totalTax = parseFloat(tempTax.toFixed(2));
     const total = subTotal + totalTax;
     this.setState(() => {
       return { subTotal: subTotal, taxTotal: totalTax, total: total };
     });
+  };
+
+  onClickSearch = (res, path) => {
+    const products = this.state.products;
+    res = res.toLowerCase();
+    const searchRes = products.filter(
+      product =>
+        product.title.toLowerCase().includes(res) ||
+        product.company.toLowerCase().includes(res) ||
+        product.info.toLowerCase().includes(res)
+    );
+    if (JSON.stringify(searchRes) === JSON.stringify(this.state.searchList)) {
+    } else {
+      console.log(searchRes);
+      this.setState(
+        () => {
+          return { searchList: searchRes };
+        },
+        () => <Redirect to={path} />
+      );
+    }
   };
   render() {
     return (
@@ -165,6 +188,7 @@ class ProductProvider extends React.Component {
           decrement: this.toDecrement,
           removeItem: this.removeItem,
           clearCart: this.clearCart,
+          onClickSearch: this.onClickSearch,
         }}
       >
         {this.props.children}

@@ -7,7 +7,7 @@ class ProductModal extends Component {
     return (
       <div>
         <ProductConsumer>
-          {(value) => {
+          {value => {
             const { id, info, title, img, inCart, price, company } =
               value.modalProduct;
             return (
@@ -18,6 +18,7 @@ class ProductModal extends Component {
                 onHide={() => value.closeModal()}
               >
                 <Card className="text-center">
+                  <Modal.Header closeButton></Modal.Header>
                   <Card.Img
                     variant="top"
                     src={img}
@@ -28,11 +29,15 @@ class ProductModal extends Component {
                       {title}- {company}
                     </Card.Title>
                     <Card.Text className="price">${price}</Card.Text>
-                    <Button variant="secondary" onClick={value.closeModal}>
-                      Continue Shopping
+                    <Button
+                      variant="secondary"
+                      className="mx-3 mb-3"
+                      onClick={value.closeModal}
+                    >
+                      Keep Shopping
                     </Button>
                     <Button
-                      className="btn btn-black"
+                      className="btn btn-black mx-3 mb-3"
                       onClick={value.closeModal}
                     >
                       <Link to={"/store"}>Go to Cart</Link>

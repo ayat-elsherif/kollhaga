@@ -18,6 +18,7 @@ Show Styles
         }
         &:hover {
             // background-image: url(/images/bg/show-table-bg.jpg);
+            background-color: #333;
             .show-type,
             .show-company,
             .show-counter,
@@ -41,9 +42,10 @@ Show Styles
     line-height: 100%;
     transition: all 0.3s ease;
     width: 200px;
-    tr:hover & {
-        padding-left: 30px;
-    }
+    padding: 20px 15px !important;
+    // tr:hover & {
+    //     padding-left: 10px;
+    // }
     .img {
         display: block;
         font-size: 3.4rem;
@@ -90,8 +92,9 @@ Show Styles
     text-align: right;
     transition: all 0.3s ease;
     width: 200px;
+    padding-right: 15px !important;
     tr:hover & {
-        padding-right: 30px;
+        // padding-right: 10px;
         .btn.btn-border {
             background-color: transparent;
             border-color: #ffffff;

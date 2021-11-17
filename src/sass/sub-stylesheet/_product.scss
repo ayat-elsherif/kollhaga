@@ -79,7 +79,7 @@ Products
         font-weight: 600;
         color: $baseColor;
         font-size: 1.8rem;
-        margin: 0;
+        margin: 0 20px 0 0;
         a {
             color: inherit;
             &:hover {
@@ -99,6 +99,9 @@ Products
         small{
             font-size: small;
             margin-left: 3px;
+            sup{
+                font-size: 1em;
+            }
         }
     }
 }

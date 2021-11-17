@@ -266,3 +266,26 @@ a {
     /*most browsers by now */
     user-select: none;
 }
+
+
+
+.modal{
+
+  .modal-dialog{
+    @include breakpoint(sm){
+      max-width: 400px;
+    }
+    .modal-header{
+      justify-content: end;
+      border:none;
+      button{
+        background: none;
+        border: none;
+        height: 40px;
+        width: 40px;
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+  }
+}
