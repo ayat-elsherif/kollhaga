@@ -1,5 +1,5 @@
 <h2> Koll7aga </h2>
-## The latest smartphones and handsets versions with a comparative prices.
+The latest smartphone and handset versions with a comparative prices.
 
 ## Made with Reactjs + context API
 
